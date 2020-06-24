@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%
+}
+
+body{
+    overflow-x: hidden;
+    background-color: rgb(59, 58, 58);
+}
+
+body::after{
+    content: "tingmingyuan@invokeisdata.com";
+    color: white;
+    transform: rotate(90deg)
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav{ 
+    background-color: rgb(46, 46, 46);
+    width:100%;
+    min-width: 375px;
+    position:fixed;
+    height:100px;
+    z-index: 2;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: top 0.5s;  
+}
+/* we use padding instead of margin 1em in this project */
+
+.nav-links{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* the following are modified from youtube tutorial */
+    position: absolute;
+    height: 92vh;
+    width: 60%;
+    right: 0px;
+    top: 100px;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+}
+
+.nav-active{
+    transform: translate(0%);
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,5px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-5px);
+}
+
+.nav-links li{
+    border: 1px solid white;
+    margin: 0px 10px;
+    /* opacity:0; */
+}
+
+.nav-links a{
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-family: "Poppins";
+    font-size: 15px;
+    transition: all 1s;
+}
+
+ul li, #logo, .burger{
+    animation: fadeInNav 2s ;
+    animation-fill-mode: both;
+}
+
+ul li:nth-child(2){
+    animation-delay: 1s;
+}
+
+ul li:nth-child(3){
+    animation-delay: 1.25s;
+}
+
+@keyframes fadeInNav{
+    from {
+        transform: translate(0px,-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes mobileNavFade{
+    from{
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeInContent {
+    from{
+        transform: translate(0px,200px);
+        opacity: 0;
+    }
+
+    to{ 
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+    
+}
+
+a:hover{
+    color:rgb(0, 255, 0);
+    transition:all 1s;
+    cursor: pointer;
+}
+
+i.fa-cube{
+    font-size: 35px;
+    transition: all 1s;
+    color: rgb(0, 255, 0);
+}
+
+i.fa-cube:hover, .burger:hover{
+    cursor:pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color: rgb(0, 255, 0);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+#container{
+    width:100%;
+    height: auto;
+    background-color: rgb(59, 58, 58);
+}
+
+#section1-intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 150px 30px 100px;
+    box-sizing: border-box;
+    animation: fadeInLeft 2s;
+    animation-delay: 3s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInLeft {
+    from{
+        transform: translate(-200px, 0px);
+        opacity: 0;
+    }
+
+    to{ 
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+
+}
+
+#section2-about, #section3-selectedProject, #section4-getInTouch{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 100px 30px;
+    box-sizing: border-box;
+}
+
+h5#greeting{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
+
+h1#Name{
+    font-size: 60px;
+    font-family: "Poppins";
+    font-weight: 800;
+    color: rgb(0, 255, 0);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+p{
+    color: lightgrey;
+    font-size: 20px;
+    line-height: 1.3;
+    font-family: "Poppins";
+    font-weight: normal;
+    width: auto;
+    height: auto;
+}
+
+h1.section-title{
+    color: white;
+    font-size: 40px;
+    margin: 0 0 20px;
+    font-family: "Poppins";
+    font-weight: 800;
+}
+
+/* .invert { 
+    filter: invert(100%); 
+} */
+
+
+img#parrallax{
+    position: absolute;
+    z-index: 2;
+    width: 90%;
+    height: auto;
+    bottom: 80px;
+}
+
+#about-me-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+img#intro-image{
+    width: 280px;
+    height: 357px;
+    border-radius: 5%;
+    margin: 15px 30px;
+}
+
+img#square-image{
+    width: 215px;
+    height: 215px;
+    border-radius: 5%;
+    margin: 20px;
+}
+
+div#social-media{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+i.fa-linkedin, i.fa-github, i.fa-codepen, i.fa-instagram{
+    font-size: 30px;
+    padding: 10px 20px;
+    transition: all 1s;
+    color: white;
+}
+
+i.fa-linkedin:hover, i.fa-github:hover, i.fa-codepen:hover, i.fa-instagram:hover{
+    color: rgb(0, 255, 0);
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+#footer{
+    padding: 30px 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#copy-right, .fa-copyright{
+    font-size: 12px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@media (min-width: 500px){
+    /* .nav-links a{
+        display: inline-block;
+    } */
+
+    #container{
+        max-width: 900px;
+        margin:0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .burger{
+        display: none;
+    }
+
+    .nav-links{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        top:0;
+        width: auto;
+        height: auto;
+        transform: translate(0%);
+    }
+
+    .section-title{
+        text-align: center;
+    }
+
+    #section1-intro{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    #web-view-right{
+        order: 3;
+    }
+
+    #web-view-left{
+        order: -1;
+    }
+
+    img#intro-image{
+        width: auto;
+        max-width: 320px;
+        height: auto;
+        max-height: 410px;
+        border-radius: 5%;
+        margin: 30px;
+    }
+
+    img#parrallax{
+        position: absolute;
+        z-index: 2;
+        width: 90%;
+        height: 25%;
+        bottom: 80px;
+    }
+    #about-me-content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    p{
+        width: 60%;
+        min-width:375px ;
+    }
+
+    #footer{
+        width: 100%;
+    }
+}

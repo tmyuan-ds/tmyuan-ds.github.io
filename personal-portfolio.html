@@ -1,4 +1,175 @@
 <html>
-    <head></head>
-    <body></body>
+    <head>
+        <title>Ting Ming Yuan | Software Engineer</title>
+
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="stylesheet" href="personal-portfolio.css"/>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <nav id="header">
+            <div id="logo"><a href="#introduction"><i class="fa fa-cube" aria-hidden="true"></i></a></div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#aboutMe">About Me</a>
+                </li>
+                <li>
+                    <a href="#selectedProject">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#getInTouch">Contact</a>
+                </li>
+            </ul>
+            <div class="burger" onclick="navSlide()">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <div id="container">
+            <a name="introduction"></a>
+            <div id="section1-intro">
+                <div id="web-view-right">
+                    <h5 id="greeting">Hi, my name is</h5>
+                    <h1 id="Name">Ming Yuan.</h1>
+                    <p id="para-sec1">I'm a full stack software engineer <br>based in Kuala Lumpur, Malaysia with a passion for software development, cloud computing and data science.<br></p>
+                </div>
+                <div id="web-view-left">
+                    <div id="parallaxEff">
+                        <img id="intro-image" src="Media/TMY-welcome-png.png" alt="Ming Yuan"/>
+                    </div>
+                </div>
+                
+                <img id="parrallax" class="invert" src="Media/KL-skyline-white.png" alt="KL landscape black and white">
+            </div>
+            <a name="aboutMe"></a>
+            <div id="section2-about">
+                <h1 class="section-title">About Me</h1>
+                <div id="about-me-content">
+                    <p>I'm Ming Yuan, a full stack software engineer based in Kuala Lumpur, Malaysia.
+                    After graduating from The University of Nottingham Malaysia, I joined the system department at <span><a href="https://invokeisdata.com/" target="_blank">Invoke</a></span>.</p>
+                    <div class="mix-blend">
+                        <img id="square-image" src='Media/DSC07530.jpg' alt="profile picture - square"/>
+                    </div>
+                </div>
+                <div>
+                    <p>Here are a few programming languages that I'm using recently:</p>
+
+                </div>
+            </div>
+            <a name="selectedProject"></a>
+            <div id="section3-selectedProject">
+                <h1 class="section-title">Portfolio</h1>
+            </div>
+            <a name="getInTouch"></a>
+            <div id="section4-getInTouch">
+                <h1 class="section-title">Contact Me</h1> 
+                <p>Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+            </div>
+            <div id="social-media">
+                <a href="https://www.linkedin.com/in/tmyuan/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true" ></i></a>
+                <a href="https://github.com/tmyuan-ds" target="_blank"></a><i class="fa fa-github" aria-hidden="true"></i></a>
+                <a href="https://codepen.io/tmyuan-ds" target="_blank"><i class="fa fa-codepen" aria-hidden="true"></i></a>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </div>
+            <div id="footer">
+                <p id="copy-right"><i class="fa fa-copyright" aria-hidden="true"></i> 2020 Ting Ming Yuan</p>
+            </div>
+        </div>
+        <script>
+            var burger = document.querySelector('burger');
+            var nav= document.querySelector('.nav-links');
+            var navLinks = document.querySelectorAll('.nav-links li');
+
+            // function navSlide(){
+                
+            //     if(className ="nav-link"){
+            //         document.querySelector('.nav-links').className= "nav-links  nav-active";
+            //     } else {
+            //         document.querySelector('.nav-links').className= "nav-links";
+            //     }
+            // }
+
+            // function navSlide(){
+            //     const burger =document.querySelector(".burger");
+            //     const nav = document.querySelector(".nav-links")
+
+            //     burger.addEventListener("click", function(){
+            //         (nav-links).classlist.toggle('navActive');
+            //     });
+
+            // }
+
+            // navSlide();
+           
+            function navSlide(){
+            var burger = document.querySelector(".burger");
+            var nav= document.querySelector(".nav-links");
+            var navLinks = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener("click", ()=> {
+                burger.classList.toggle("toggle");
+                nav.classList.toggle("nav-active");
+
+                navLinks.forEach((link,index) =>{
+                    if (link.style.animation) {
+                        link.style.animation =""
+                    }else{
+                        link.style.animation = `mobileNavFade 2s ease both ${index/3}s`;
+                        
+                        console.log(index/3);
+                    }     
+                });
+            
+                
+            });
+
+            }
+
+            //Hide and show navigation bar 
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+                var currentScrollPos = window.pageYOffset;
+                console.log("currentScrollspos is,", currentScrollPos);
+                console.log("prevScrollspos is", prevScrollpos);
+
+                if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("header").style.top = "0";
+                } else {
+                    document.getElementById("header").style.top = "-100px";
+                }
+                prevScrollpos = currentScrollPos;
+            }
+
+            //Dectect scroll movement to activate animation for every section
+            var secTwo = document.getElementById("section2-about");
+            var secThree = document.getElementById("section3-selectedProject");
+            var secFour = document.getElementById("section4-getInTouch");
+
+            window.addEventListener('scroll', function(){
+                console.log("Sec Two:", secTwo.offsetTop, ", scroll: ", window.scrollY);
+                console.log("Sec Three:", secThree.offsetTop,", scroll: ", window.scrollY);
+                console.log("Sec Four:", secFour.offsetTop, ", scroll: ", window.scrollY);
+                console.log("can fade")
+
+                if (window.scrollY >= secTwo.offsetTop - 600){
+                    secTwo.style.opacity =1;
+                    secTwo.style.animation ="fadeInContent 2s";
+                }
+                if (window.scrollY >= secThree.offsetTop - 600){
+                    secThree.style.opacity =1;
+                    secThree.style.animation ="fadeInContent 2s";
+                }
+                if (window.scrollY >= secFour.offsetTop - 600){
+                    secFour.style.opacity =1;
+                    secFour.style.animation ="fadeInContent 2s";
+                }
+            })
+
+
+
+        </script>
+    </body>
 </html>

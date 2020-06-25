@@ -25,32 +25,26 @@ function hideNav(){
     var navList = document.querySelector(".list");
     var nav= document.querySelector(".nav-links");
     var burger = document.querySelector(".burger");
-    // var navLinks = document.querySelectorAll('.nav-links li');
+    
         burger.classList.toggle("toggle");
         nav.classList.toggle("nav-active");
-
-    // navList.addEventListener("click", () => {
-        
-
-    //     console.log("can hide sidebar");
-    // });
 }
 
 
 //Hide and show navigation bar 
-var prevScrollpos = window.pageYOffset;
+var initialScrollpos = window.pageYOffset;
 
 window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
     console.log("currentScrollspos is,", currentScrollPos);
-    console.log("prevScrollspos is", prevScrollpos);
+    console.log("initialScrollspos is", initialScrollpos);
 
-    if (prevScrollpos > currentScrollPos) {
+    if (initialScrollpos > currentScrollPos) {
         document.getElementById("header").style.top = "0";
     } else {
         document.getElementById("header").style.top = "-100px";
     }
-    prevScrollpos = currentScrollPos;
+    initialScrollpos = currentScrollPos;
 }
 
 //Dectect scroll movement to activate animation for every section

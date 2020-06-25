@@ -42,7 +42,6 @@ nav{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    /* the following are modified from youtube tutorial */
     position: absolute;
     height: 92vh;
     width: 60%;
@@ -61,9 +60,11 @@ nav{
 .toggle .line1{
     transform: rotate(-45deg) translate(-5px,5px);
 }
+
 .toggle .line2{
     opacity: 0;
 }
+
 .toggle .line3{
     transform: rotate(45deg) translate(-5px,-5px);
 }
@@ -72,7 +73,6 @@ nav{
     border: 1px solid white;
     border-radius: 5%;
     margin: 0px 10px;
-    /* opacity:0; */
 }
 
 .nav-links a{
@@ -130,6 +130,7 @@ nav{
     animation-fill-mode: both;
 }
 
+/* logo & burger div fade from top */
 @keyframes fadeInNav{
     from {
         transform: translate(0px,-50px);
@@ -143,7 +144,7 @@ nav{
 
 }
 
-
+/* li.list fade from right */
 @keyframes mobileNavFade{
     from{
         opacity: 0;
@@ -155,6 +156,7 @@ nav{
     }
 }
 
+/* Sections below first page fade from bottom */
 @keyframes fadeInContent {
     from{
         transform: translate(0px,200px);
@@ -214,6 +216,8 @@ i.fa-cube:hover, .burger:hover{
     animation-fill-mode: both;
 }
 
+
+/* Section1-intro fade from left */
 @keyframes fadeInLeft {
     from{
         transform: translate(-200px, 0px);
@@ -270,11 +274,6 @@ h1.section-title{
     font-weight: 800;
 }
 
-/* .invert { 
-    filter: invert(100%); 
-} */
-
-
 img#parrallax{
     position: absolute;
     z-index: 2;
@@ -290,6 +289,7 @@ img#parrallax{
     align-items: center;
 }
 
+/* Highlight animation for li.list  */
 .highlight-list{
     text-decoration: none;
     color: lightgrey;
@@ -297,15 +297,14 @@ img#parrallax{
     padding: 0px 7px;
     transition: all .2s ease-in-out;
     box-sizing: border-box;
-    text-decoration: none;
     box-shadow: inset 0 0px 0 rgb(0, 255, 0);
 }
 
 .highlight-list:hover{
     box-shadow: inset 0 -25px 0 rgb(0, 255, 0);
-    color: black;
 }
 
+/* Highlight animation for Invoke (link to website)  */
 .highlight-link{
     text-decoration: none;
     color: lightgrey;
@@ -321,6 +320,7 @@ img#parrallax{
     box-shadow: inset 0 -55px 0 0 rgb(0, 255, 0);
     color: black;
 }
+
 img#intro-image{
     width: 280px;
     height: 357px;
@@ -514,16 +514,6 @@ i.fa-linkedin:hover, i.fa-github:hover, i.fa-codepen:hover, i.fa-instagram:hover
     cursor: pointer;
 }
 
-/* #call-to-action{
-    border: 1px solid white;
-    border-radius: 5%;
-    padding: 5px;
-    box-sizing: border-box;
-    width: 135px;
-    font-size: 15px;
-    margin-top: 90px;
-} */
-
 #input-box{
     margin-top: 20px;
     display: flex;
@@ -641,7 +631,7 @@ p#copy-right{
         width: auto;
         height: auto;
         transform: translate(0%);
-        min-width:410px;
+        min-width:580px;
     }
 
     ul li{
@@ -761,7 +751,7 @@ p#copy-right{
         height: 50px;
         font-size: 20px;
         border-radius: 50%;
-        background-color: rgb(168, 167, 167);
+        background-color: rgb(46, 46, 46);
         position: absolute;
         top: 50%;
         margin-top: -25px;
@@ -771,14 +761,14 @@ p#copy-right{
     }
 
     .fa-arrow-right, .fa-arrow-left{
-        color: black;
+        color: rgb(207, 207, 207);;
         margin-top: 25%;
     }
 
     .fa:hover{
         cursor: pointer;
         transition: all 1s;
-        color: white;
+        color: rgb(144, 238, 114);
     }
 
     .btn-right{
@@ -786,7 +776,7 @@ p#copy-right{
         height: 50px;
         font-size: 20px;
         border-radius: 50%;
-        background-color: rgb(168, 167, 167);
+        background-color: rgb(46, 46, 46);
         position: absolute;
         top: 50%;
         margin-top: -25px;

@@ -8,12 +8,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&family=Source+Sans+Pro&display=swap" rel="stylesheet">
         
     </head>
-    <body>
-        <div class="preloader">
-            
+    <body>  
         </div>
         <nav id="header">
             <div id="logo"><a href="#introduction"><i class="fa fa-cube" aria-hidden="true"></i></a></div>
+            
             <ul class="nav-links">
                 <li class="highlight-list">
                     <a class="list" onclick="hideNav()" href="#aboutMe">About Me</a>
@@ -22,15 +21,17 @@
                     <a class="list" onclick="hideNav()" href="#selectedProject">Portfolio</a>
                 </li>
                 <li class="highlight-list">
-                    <a class="list" onclick="hideNav()" href="#getInTouch">Contact</a>
+                    <a class="list" onclick="hideNav()" href="#getInTouch">Contact Me</a>
                 </li>
             </ul>
+            
             <div class="burger" onclick="navSlide()">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
         </nav>
+
         <div id="container">
             <a name="introduction"></a>
             <div id="section1-intro">
@@ -44,15 +45,16 @@
                         <img id="intro-image" src="Media/TMY-welcome-png.png" alt="Ming Yuan"/>
                     </div>
                 </div>
-                <img id="parrallax" class="invert" src="Media/KL-skyline-white.png" alt="KL landscape black and white">
+                <img id="parrallax" src="Media/KL-skyline-white.png" alt="KL landscape black and white">
             </div>
+
             <a name="aboutMe"></a>
             <div id="section2-about">
                 <h1 class="section-title">About Me</h1>
                 <div id="about-me-content">
                     <p>I'm Ming Yuan, a full stack software engineer based in Kuala Lumpur, Malaysia.
                     After graduating from The University of Nottingham Malaysia, I joined the system department at <span><a class="highlight-link" href="https://invokeisdata.com/" target="_blank">Invoke</a></span>.</p>
-                    <div id="about-me-photo" class="mix-blend border-animation">
+                    <div id="about-me-photo" class="border-animation">
                         <img id="square-image" src="Media/TMY-square-2.jpg" alt="profile picture - square"/>
                     </div>
                 </div>
@@ -63,10 +65,12 @@
                     <p class="language"><i class="fa fa-code" aria-hidden="true"></i> JavaScript</p>
                 </div>
             </div>
+
             <a name="selectedProject"></a>
             <div id="section3-selectedProject">
                 <h1 class="section-title">Portfolio</h1>
                 <div id="slider-container" >
+
                     <div id="slider" onmouseover="autoSlider()" onmouseout="stopSlider()">
                         <div class="slider-item" id="project1">
                             <h1>Selected Project <br>1<br></h1>
@@ -78,6 +82,7 @@
                             <h1>Selected Project <br>3<br></h1>
                         </div>
                     </div>
+
                     <div class="btn-left" onclick="moveSlider(100)"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
                     <div class="btn-right" onclick="moveSlider(-100)"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
         
@@ -90,38 +95,40 @@
                     </div>
                 </div>
             </div>
+
             <a name="getInTouch"></a>
             <div id="section4-getInTouch">
                 <div id="getInTouch-content">
                     <h1 class="section-title">Contact Me</h1> 
                     <p>I am open to any ideas of cooperation. My inbox <span><a data-clipboard-text="tingmingyuan96@gmail.com">📧</a></span> is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-                    <!-- <div id="call-to-action">
-                        <p><a href="mailto:tingmingyuan96@gmail.com" class="arrow-link">Get in touch</a></p>
-                    </div> -->
                 </div>
+
                 <div id="input-box">
                     <h3>Name</h3>
-                    <input id="name"class="input-field " type="text" placeholder="Ting Ming Yuan">
+                    <input id="name" class="input-field " type="text" placeholder="Ting Ming Yuan">
                     <h3>Email</h3>
-                    <input id="email" class="input-field input-upper" type="text" placeholder="tingmingyuan@invokeisdata.com">
+                    <input id="email" class="input-field" type="text" placeholder="tingmingyuan@invokeisdata.com">
                     <h3>Message</h3>
                     <textarea id="input-message" class="input-field" type="text" placeholder="Message"> </textarea>
                     <span><button id="send-btn" onclick="sendInput()">SEND</button></span>
                 </div>
             </div>
+
             <div id="social-media">
                 <a href="https://www.linkedin.com/in/tmyuan/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true" ></i></a>
                 <a href="https://github.com/tmyuan-ds" target="_blank"></a><i class="fa fa-github" aria-hidden="true"></i></a>
                 <a href="https://codepen.io/tmyuan-ds" target="_blank"><i class="fa fa-codepen" aria-hidden="true"></i></a>
                 <i class="fa fa-instagram" aria-hidden="true"></i>
             </div>
+
             <div id="footer">
                 <p id="copy-right"><i class="fa fa-copyright" aria-hidden="true"></i> 2020 Ting Ming Yuan</p>
             </div>
         </div>
+
         <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-database.js"></script>
-        <script src="personal-portfolio.js">
-        </script>
+        <script src="personal-portfolio.js"></script>
+        
     </body>
 </html>
